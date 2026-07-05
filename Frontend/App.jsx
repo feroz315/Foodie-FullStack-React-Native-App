@@ -13,7 +13,7 @@ const App = () => {
        </Provider>
       <Toast /> */}
     
-      <Text>Welcome New Project</Text>
+      <Text style={{ textAlign:'center',marginTop:100}}>Welcome New Project</Text>
 </>
  
    );

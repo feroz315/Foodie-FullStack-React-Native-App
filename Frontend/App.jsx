@@ -1,18 +1,18 @@
-// import { Provider } from 'react-redux';
-// import Navigation from "./src/screens/navigation";
-// import { store } from "./src/state/Store";
-import { Text } from "react-native";
+import { Provider } from 'react-redux';
+import Navigation from "./src/screens/navigation";
+import { store } from "./src/state/Store";
+// import { Text } from "react-native";
 
 const App = () => {
  return (
 <>
-{/* 
+
   <Provider store={store}>    
     <Navigation />
        </Provider>
-      <Toast /> */}
+      <Toast />
     
-      <Text style={{ textAlign:'center',marginTop:100}}>Welcome New Project</Text>
+          {/* <Text style={{ textAlign:'center',marginTop:100}}>Welcome New Project</Text> */}
 </>
  
    );

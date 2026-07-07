@@ -26,10 +26,10 @@ const Navigation = () => {
         />
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="bottomNav">
-        <Stack.Screen name="board" component={BoardScreen} />
+        initialRouteName="home">
+        {/* <Stack.Screen name="board" component={BoardScreen} /> */}
         <Stack.Screen name="home" component={Home} />
-        <Stack.Screen name="signup" component={Signup} />
+        {/* <Stack.Screen name="signup" component={Signup} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="productdetail" component={ProductDetail} />
         <Stack.Screen name="cart" component={Cart} />
@@ -37,7 +37,7 @@ const Navigation = () => {
         <Stack.Screen name="logout" component={Logout} />
         <Stack.Screen name="delivery" component={Delivery} />
         <Stack.Screen name="order" component={OrderForm} />
-        
+         */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -17,7 +17,7 @@ import {useNavigation} from '@react-navigation/native';
 import api from '../config/api';
 import {useSelector} from 'react-redux';
 import {selectcartItems} from '../state/CartSlics';
-import Carousel from 'react-native-reanimated-carousel';
+// import Carousel from 'react-native-reanimated-carousel';
 import axios from 'axios';
 
 const {width: screenWidth} = Dimensions.get('window');
@@ -58,31 +58,14 @@ const Home = () => {
   const cartItems = useSelector(selectcartItems);
   const navigation = useNavigation();
 
-  const data = [
-    {id: 1, source: require('../assets/images/menhoodi.jpg')},
-    {id: 2, source: require('../assets/images/menshirt.jpg')},
-    {id: 3, source: require('../assets/images/mentshirt.jpg')},
-    {id: 4, source: require('../assets/images/menshoes.jpg')},
-    {id: 5, source: require('../assets/images/whiteglasses.jpg')},
-  ];
+  // const data = [
+  //   {id: 1, source: require('../assets/images/menhoodi.jpg')},
+  //   {id: 2, source: require('../assets/images/menshirt.jpg')},
+  //   {id: 3, source: require('../assets/images/mentshirt.jpg')},
+  //   {id: 4, source: require('../assets/images/menshoes.jpg')},
+  //   {id: 5, source: require('../assets/images/whiteglasses.jpg')},
+  // ];
 
-  const fetchProfile = async () => {
-    try {
-      const res = await api.get('/profile');
-      console.log(res.user);
-      setUsername(res.user);
-    } catch (err) {
-      console.log(err, 'Failed');
-    }
-  };
-
-  const options = {
-    mediaType: 'photo',
-    maxWidth: scale(300),
-    maxHeight: verticalScale(400),
-    quality: 1,
-    includeBase64: false,
-  };
 
   const getdata = async () => {
     try {
@@ -117,7 +100,6 @@ const Home = () => {
 
   useEffect(() => {
     getdata();
-    fetchProfile();
   }, []);
 
 
@@ -160,7 +142,7 @@ const Home = () => {
 
         {/* --- FEATURED BANNER --- */}
 
-        <Carousel
+        {/* <Carousel
           width={screenWidth}
           height={250}
           data={data}
@@ -198,7 +180,7 @@ const Home = () => {
             parallaxScrollingOffset: 50,
             parallaxAdjacentItemScale: 0.8,
           }}
-        />
+        /> */}
 
         {/* --- CATEGORIES --- */}
         <View style={styles.sectionHeader}>

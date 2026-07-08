@@ -14,7 +14,7 @@ import {
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import { COLORS } from '../const/colors';
 import {useNavigation} from '@react-navigation/native';
-import api from '../config/api';
+// import api from '../config/api';
 import {useSelector} from 'react-redux';
 import {selectcartItems} from '../state/CartSlics';
 // import Carousel from 'react-native-reanimated-carousel';
@@ -53,8 +53,7 @@ const CategoryItem = ({item, active, onPress}) => (
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState('1');
-  const [username, setUsername] = useState(null);
-
+  
   const cartItems = useSelector(selectcartItems);
   const navigation = useNavigation();
 
@@ -112,7 +111,7 @@ const Home = () => {
         {/* --- HEADER --- */}
         <View style={styles.header}>
           <View>
-             <Text style={styles.username}>{username?.name} </Text>
+             <Text style={styles.username}>{name} </Text>
           </View>
 
           <TouchableOpacity

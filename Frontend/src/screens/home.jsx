@@ -33,7 +33,7 @@ const categories = [
   {id: '5', name: 'Fast Food', icon: 'flower-outline'},
 ];
 
-// --- COMPONENTS ---
+// --- COMPONENTS -
 
 const CategoryItem = ({item, active, onPress}) => (
   <TouchableOpacity

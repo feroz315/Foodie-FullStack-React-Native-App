@@ -14,7 +14,6 @@ import {
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import { COLORS } from '../const/colors';
 import {useNavigation} from '@react-navigation/native';
-// import api from '../config/api';
 import {useSelector} from 'react-redux';
 import {selectcartItems} from '../state/CartSlics';
 // import Carousel from 'react-native-reanimated-carousel';
@@ -27,11 +26,11 @@ const URL_API = "https://mocki.io/v1/9b04472a-fc24-4aa6-9bea-430d649c1415";
 
 // --- MOCK DATA ---
 const categories = [
-  {id: '1', name: 'Electronics', icon: 'phone-portrait-outline'},
-  {id: '2', name: 'Fashion', icon: 'shirt-outline'},
-  {id: '3', name: 'Home', icon: 'home-outline'},
-  {id: '4', name: 'Sports', icon: 'fitness-outline'},
-  {id: '5', name: 'Beauty', icon: 'flower-outline'},
+  {id: '1', name: 'Pizza', icon: 'phone-portrait-outline'},
+  {id: '2', name: 'Burger King', icon: 'shirt-outline'},
+  {id: '3', name: 'Taco Bell', icon: 'home-outline'},
+  {id: '4', name: 'Strawberry', icon: 'fitness-outline'},
+  {id: '5', name: 'Fast Food', icon: 'flower-outline'},
 ];
 
 // --- COMPONENTS ---

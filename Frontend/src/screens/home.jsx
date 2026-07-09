@@ -110,7 +110,7 @@ const Home = () => {
         {/* --- HEADER --- */}
         <View style={styles.header}>
           <View>
-             <Text style={styles.username}>{name} </Text>
+             <Text style={styles.username}>Sunny </Text>
           </View>
 
           <TouchableOpacity

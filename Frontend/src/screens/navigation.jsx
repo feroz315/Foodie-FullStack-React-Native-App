@@ -35,6 +35,7 @@ const Navigation = () => {
         <Stack.Screen name="cart" component={Cart} />
         <Stack.Screen name="checkout" component={Chectout} />
         <Stack.Screen name="logout" component={Logout} />
+        <Stack.Screen name="delivery" component={Delivery} />
         <Stack.Screen name="order" component={OrderForm} />
          */}
       </Stack.Navigator>

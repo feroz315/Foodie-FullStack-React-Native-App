@@ -58,7 +58,6 @@ const Home = () => {
 
   // const data = [
   //   {id: 1, source: require('../assets/images/menhoodi.jpg')},
-  //   {id: 2, source: require('../assets/images/menshirt.jpg')},
   // ];
 
 

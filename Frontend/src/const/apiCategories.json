@@ -5,7 +5,7 @@
     "title": "Rolls",
     "price": "Rs.250",
     "description": "Classic delight with 100% real mozzarella cheese",
-    "images": require('../assets/icons/ch-roll.png'),
+    "images": "require('../assets/icons/ch-roll.png')",
     "rating": 4.3,
     "reviews": 35
    
@@ -15,7 +15,7 @@
     "title": "Burger",
     "price": "Rs.200",
     "description": "Classic delight with 100% real Burger",
-    "images": require('../assets/icons/burgers.png'),
+    "images": "require('../assets/icons/burgers.png')",
     "rating": 4.1,
     "reviews": 14     
         
@@ -26,7 +26,7 @@
     "title": "Bar B-Q",
     "price": "Rs.450",
     "description": "Classic delight with 100% real Bar BQ",
-    "images": require('../assets/icons/barbq.png'),
+    "images": "require('../assets/icons/barbq.png')",
     "rating": 4.3,
     "reviews": 42     
   
@@ -36,7 +36,7 @@
     "title": "Handi",
     "price": "Rs.1050",
     "description": "Classic delight with 100% real mozzarella",
-    "images": require('../assets/icons/handi.png'),
+    "images": "require('../assets/icons/handi.png')",
     "rating": 4.7,
     "reviews": 27
       
@@ -46,7 +46,7 @@
     "title": "Karhai",
     "price": "Rs.1200",
     "description": "Classic delight with 100%",
-    "images": require('../assets/icons/chicken-karahi.png'),
+    "images": "require('../assets/icons/chicken-karahi.png')",
     "rating": 4.8,
     "reviews": 31    
   
@@ -56,7 +56,7 @@
     "title": "Fish",
     "price": "Rs.1250",
     "description": "delight with 100% ",
-    "images": require('../assets/icons/fish.png'),
+    "images": "require('../assets/icons/fish.png')",
     "rating": 4.8,
     "reviews": 33
     
@@ -66,7 +66,7 @@
     "title": "Dal\nSabzi",
     "price": "Rs.350",
     "description": "Classic delight",
-    "images": require('../assets/icons/dal.png'),
+    "images": "require('../assets/icons/dal.png')",
     "rating": 3.8,
     "reviews": 14   
 
@@ -76,7 +76,7 @@
     "title": "Chesse Paratha",
     "price": "Rs.200",
     "description": "Classic delight with 100% real Paratha",
-    "images": require('../assets/icons/paratha.png'),
+    "images": "require('../assets/icons/paratha.png')",
     "rating": 3.7,
     "reviews": 21  
 
@@ -86,7 +86,7 @@
     "title": "Sand\nWiches",
     "price": "Rs.350",
     "description": "Classic delight with 100% real",
-    "images": require('../assets/icons/sandwich.png'),
+    "images": "require('../assets/icons/sandwich.png')",
     "rating": 4.1,
     "reviews": 11
 },
@@ -95,7 +95,7 @@
     "title": "French\nFries",
     "price": "Rs.100",
     "description": "delight with 100%",
-    "images":  require('../assets/icons/french-fries.png'),
+    "images":  "require('../assets/icons/french-fries.png')",
     "rating": 3.7,
     "reviews": 12
 
@@ -106,7 +106,7 @@
     "title": "Drinks",
     "price": "Rs.150",
     "description": "cold drink",
-    "images": require('../assets/icons/cold-drinks.png'),
+    "images": "require('../assets/icons/cold-drinks.png')",
     "rating": 3.7,
     "reviews": 7
     
@@ -122,6 +122,6 @@
     "rating": 4.8,
     "reviews": 124
     
-  },
+  }
   
  ]

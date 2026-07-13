@@ -8,8 +8,7 @@ const App = () => {
 
   <Provider store={store}>    
     <Navigation />
-       </Provider>
-    
+       </Provider> 
  
 </>
  

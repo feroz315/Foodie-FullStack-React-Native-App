@@ -5,13 +5,11 @@ import {StatusBar} from 'react-native';
 
 // import Signup from '../screens/signup';
 // import Login from '../screens/login';
-// import BoardScreen from './boardscreen';
 // import ProductDetail from './details';
 import Home from './home';
 // import Cart from './cart';
 // import Chectout from './chectout';
 // import Logout from './logout';
-// import Delivery from './delivery';
 // import OrderForm from './order';
 
 const Stack = createStackNavigator();

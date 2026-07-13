@@ -8,7 +8,6 @@ import {StatusBar} from 'react-native';
 // import ProductDetail from './details';
 import Home from './home';
 // import Cart from './cart';
-// import Chectout from './chectout';
 // import Logout from './logout';
 // import OrderForm from './order';
 

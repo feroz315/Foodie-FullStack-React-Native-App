@@ -3,7 +3,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {StatusBar} from 'react-native';
 
-// import Signup from '../screens/signup';
 // import Login from '../screens/login';
 // import ProductDetail from './details';
 import Home from './home';

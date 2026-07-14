@@ -29,7 +29,6 @@ const Navigation = () => {
         {/* <Stack.Screen name="signup" component={Signup} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="productdetail" component={ProductDetail} />
-        <Stack.Screen name="checkout" component={Chectout} />
         <Stack.Screen name="logout" component={Logout} />
         <Stack.Screen name="order" component={OrderForm} />
          */}

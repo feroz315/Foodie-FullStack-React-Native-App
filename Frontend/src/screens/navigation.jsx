@@ -6,6 +6,7 @@ import {StatusBar} from 'react-native';
 // import Login from '../screens/login';
 // import ProductDetail from './details';
 import Home from './home';
+import ProductDetail from './productDetail';
 // import Cart from './cart';
 
 
@@ -24,8 +25,8 @@ const Navigation = () => {
         initialRouteName="home">
         {/* <Stack.Screen name="board" component={BoardScreen} /> */}
         <Stack.Screen name="home" component={Home} />
-        {/* <Stack.Screen name="signup" component={Signup} />
         <Stack.Screen name="productdetail" component={ProductDetail} />
+        {/* <Stack.Screen name="signup" component={Signup} />
         <Stack.Screen name="order" component={OrderForm} />
          */}
       </Stack.Navigator>

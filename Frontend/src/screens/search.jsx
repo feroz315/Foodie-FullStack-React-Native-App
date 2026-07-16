@@ -81,7 +81,7 @@ const Search = () => {
       <View style={styles.searchContainer}>      
       <TextInput
         style={styles.searchInput}
-        placeholder="Search products..."
+        placeholder="Search "
         onChangeText={handleSearch}
         value={searchQuery}
         autoCapitalize="none"

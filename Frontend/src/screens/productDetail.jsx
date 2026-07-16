@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import {
   View,
@@ -17,7 +16,6 @@ import {useNavigation} from '@react-navigation/native';
 import { cart } from '../const/icons';
 import {  useDispatch, useSelector } from 'react-redux';
 import { addMyCart, selectcartItems } from '../state/CartSlics';
-import api from '../config/api';
 
 
 
@@ -144,7 +142,7 @@ const ProductDetail = ({route}) => {
       <View style={styles.bottomBar}>
         <View style={styles.priceContainer}>
             <Text style={styles.bottomPriceLabel}>Total Price</Text>
-            <Text style={styles.bottomPrice}>${item.price}</Text>
+            <Text style={styles.bottomPrice}>{item.price}</Text>
         </View>
         <TouchableOpacity style={styles.addToCartButton} onPress={handleAddToCart}>
           <Text style={styles.addToCartText}>Add to Cart</Text>

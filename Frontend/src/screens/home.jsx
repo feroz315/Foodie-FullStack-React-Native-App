@@ -18,6 +18,9 @@ import {useSelector} from 'react-redux';
 import {selectcartItems} from '../state/CartSlics';
 // import Carousel from 'react-native-reanimated-carousel';
 import axios from 'axios';
+import Search from './search';
+
+
 
 const {width: screenWidth} = Dimensions.get('window');
 
@@ -132,6 +135,8 @@ const Home = () => {
             </View>
           </TouchableOpacity>
         </View>
+
+      <Search />
 
         {/* --- FEATURED BANNER --- */}
 

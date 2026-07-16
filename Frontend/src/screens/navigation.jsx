@@ -7,7 +7,6 @@ import {StatusBar} from 'react-native';
 // import ProductDetail from './details';
 import Home from './home';
 // import Cart from './cart';
-// import Logout from './logout';
 
 
 const Stack = createStackNavigator();
@@ -26,7 +25,6 @@ const Navigation = () => {
         {/* <Stack.Screen name="board" component={BoardScreen} /> */}
         <Stack.Screen name="home" component={Home} />
         {/* <Stack.Screen name="signup" component={Signup} />
-        <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="productdetail" component={ProductDetail} />
         <Stack.Screen name="order" component={OrderForm} />
          */}

@@ -4,7 +4,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {StatusBar} from 'react-native';
 
 // import Login from '../screens/login';
-// import ProductDetail from './details';
 import Home from './home';
 import ProductDetail from './productDetail';
 import Search from './search';

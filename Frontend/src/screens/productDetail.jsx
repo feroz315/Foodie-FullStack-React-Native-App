@@ -125,7 +125,7 @@ const ProductDetail = ({route}) => {
           </View>
 
           <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.price}>${item.price}</Text>
+          <Text style={styles.price}>{item.price}</Text>
 
           <View style={styles.divider} />
 

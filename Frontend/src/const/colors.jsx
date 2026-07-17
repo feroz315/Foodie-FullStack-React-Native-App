@@ -42,6 +42,7 @@ export const COLORS = {
     lighdark:'#170708',
     Danger:"#DB3D45",
     Darknavy:"#154c79",
+    Darkorange:"#F45905"
 
 };
 

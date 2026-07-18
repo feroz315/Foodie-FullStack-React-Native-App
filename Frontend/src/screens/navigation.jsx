@@ -8,7 +8,6 @@ import ProductDetail from './productDetail';
 import Search from './search';
 
 
-
 const Stack = createStackNavigator();
 
 const Navigation = () => {

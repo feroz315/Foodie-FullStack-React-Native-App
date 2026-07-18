@@ -30,11 +30,6 @@ const ProductDetail = ({route}) => {
    const cartItems = useSelector(selectcartItems);
 
 
-  // useEffect(() => {
-  //   ProductgetID();
-  // }, [])
-
-
   const handleAddToCart = () => {
     dispatch(addMyCart(item)); 
     console.log("add cart", item);

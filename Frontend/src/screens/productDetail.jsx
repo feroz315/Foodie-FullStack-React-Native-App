@@ -21,6 +21,7 @@ import { addMyCart, selectcartItems } from '../state/CartSlics';
 
 const { width: viewportWidth, height } = Dimensions.get("window");
 
+
 const ProductDetail = ({route}) => {
   // const [product, setProduct] = useState({});
   const navigation = useNavigation();

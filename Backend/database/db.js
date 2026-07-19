@@ -13,9 +13,9 @@ const client = new Client({
 
 async function check(){
     await client.connect()
-    console.log("connect to database") // Hello world!
+    console.log("connect to database") 
     // const res = await client.query('SELECT * from blogs')
-    // await client.end()    
+        
 }
 
 check();

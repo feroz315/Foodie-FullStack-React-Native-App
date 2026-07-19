@@ -339,6 +339,7 @@ scrollContent: {
 
 });
 
+
 export default ProductDetail;
 
 

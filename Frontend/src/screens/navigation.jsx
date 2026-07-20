@@ -10,6 +10,7 @@ import Search from './search';
 
 const Stack = createStackNavigator();
 
+
 const Navigation = () => {
   return (
     <NavigationContainer>

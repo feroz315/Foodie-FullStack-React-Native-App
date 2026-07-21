@@ -10,6 +10,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+
 import {
   removetoCart,
   selectcartItems,
@@ -17,6 +18,7 @@ import {
   addMyCart,
   DeleteMyCart,
 } from '../state/CartSlics';
+
 import {useNavigation} from '@react-navigation/native';
 import { COLORS } from '../const/colors';
 

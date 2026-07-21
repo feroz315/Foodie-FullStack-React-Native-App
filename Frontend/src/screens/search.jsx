@@ -11,6 +11,7 @@ const URL_API = "https://mocki.io/v1/374293e2-9b1e-4191-bd95-33f4aa85a8a6";
 
 
 
+
 const Search = () => {
   
   const [searchQuery, setSearchQuery] = useState('');

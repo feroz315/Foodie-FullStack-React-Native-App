@@ -29,6 +29,7 @@ const OrderForm = () => {
   //   items: basketItems 
   // });
     
+ 
   const [customerName, setCustomerName ] = useState('')
   const [customerEmail, setCustomerEmail ] = useState('')
   const [customerPhone, setCustomerPhone ] = useState('')
@@ -105,7 +106,8 @@ const OrderForm = () => {
 
 const isFormValid = customerName.trim() !== '' && customerEmail.trim() !== '' && customerAddress.trim() !== '' && customerPhone.trim() !== '';
   
-  const handleSubmit = () => {
+ 
+const handleSubmit = () => {
       if(!isFormValid)
          Toast.show({
          type: 'error',
@@ -245,7 +247,7 @@ const isFormValid = customerName.trim() !== '' && customerEmail.trim() !== '' &&
         </TouchableOpacity>
          
                  
-    </ScrollView>
+     </ScrollView>
     
     </SafeAreaView>
 
@@ -397,5 +399,6 @@ const styles = StyleSheet.create({
   },
 
 });
+
 
 export default OrderForm;

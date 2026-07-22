@@ -6,7 +6,7 @@ import {StatusBar} from 'react-native';
 import Home from './home';
 import ProductDetail from './productDetail';
 import Search from './search';
-
+import Cart from './cart';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +26,8 @@ const Navigation = () => {
         <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="productdetail" component={ProductDetail} />
         <Stack.Screen name="search" component={Search} />
+        <Stack.Screen name="cart" component={Cart} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

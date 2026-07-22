@@ -18,7 +18,6 @@ import {  useDispatch, useSelector } from 'react-redux';
 import { addMyCart, selectcartItems } from '../state/CartSlics';
 
 
-
 const { width: viewportWidth, height } = Dimensions.get("window");
 
 

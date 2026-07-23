@@ -236,7 +236,7 @@ const Home = () => {
           )}
         />
       </ScrollView>
-    </SafeAreaView>
+     </SafeAreaView>
   );
 };
 
@@ -387,6 +387,7 @@ const styles = StyleSheet.create({
     marginLeft: scale(2),
   },
 });
+
 
 
 export default Home;

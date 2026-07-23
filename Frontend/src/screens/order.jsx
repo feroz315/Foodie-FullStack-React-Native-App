@@ -19,7 +19,6 @@ import {CountryPicker} from "react-native-country-codes-picker";
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-
 const OrderForm = () => {
   // const [formData, setFormData] = useState({
   //   customerName: '',

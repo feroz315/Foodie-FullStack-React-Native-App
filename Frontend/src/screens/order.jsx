@@ -20,13 +20,6 @@ import {CountryPicker} from "react-native-country-codes-picker";
 
 
 const OrderForm = () => {
-  // const [formData, setFormData] = useState({
-  //   customerName: '',
-  //   customerEmail: '',
-  //   customerPhone:"",
-  //   shippingAddress: '',
-  //   items: basketItems 
-  // });
     
  
   const [customerName, setCustomerName ] = useState('')

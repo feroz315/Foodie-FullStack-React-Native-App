@@ -74,7 +74,7 @@ const Home = () => {
   };
 
 
-// const fetchProducts = async () => {
+ // const fetchProducts = async () => {
 //   try {
 //     const response = await fetch('http://192.168.1.9:3000/api/products', {
 //       method: "POST",
@@ -91,13 +91,12 @@ const Home = () => {
 //     }catch (error) {
 //     console.log("e", error)
 //   }
- // }
+  // }
 
 
   useEffect(() => {
     getdata();
   }, []);
-
 
   
   return (
@@ -388,6 +387,7 @@ const styles = StyleSheet.create({
     marginLeft: scale(2),
   },
 });
+
 
 
 export default Home;

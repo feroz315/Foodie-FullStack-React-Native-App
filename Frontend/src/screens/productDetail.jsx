@@ -144,7 +144,7 @@ const ProductDetail = ({route}) => {
         </TouchableOpacity>
         </View>
       
-      </SafeAreaView>
+       </SafeAreaView>
     </>
   );
 };

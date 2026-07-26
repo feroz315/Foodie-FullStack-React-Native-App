@@ -3,6 +3,7 @@ import Navigation from "./src/screens/navigation";
 import { store } from "./src/state/Store";
 
 
+
 const App = () => {
  return (
 <>
@@ -15,6 +16,7 @@ const App = () => {
  
    );
 }
+
 
 
 export default App;

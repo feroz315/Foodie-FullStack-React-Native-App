@@ -7,6 +7,8 @@ import Home from './home';
 import ProductDetail from './productDetail';
 import Search from './search';
 import Cart from './cart';
+import OrderForm from './order';
+
 
 const Stack = createStackNavigator();
 
@@ -27,6 +29,8 @@ const Navigation = () => {
         <Stack.Screen name="productdetail" component={ProductDetail} />
         <Stack.Screen name="search" component={Search} />
         <Stack.Screen name="cart" component={Cart} />
+        <Stack.Screen name="order" component={OrderForm} />
+        
         
       </Stack.Navigator>
     </NavigationContainer>

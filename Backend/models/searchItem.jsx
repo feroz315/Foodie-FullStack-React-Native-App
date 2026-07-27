@@ -37,7 +37,6 @@ const searchSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 
-
 const Search = mongoose.model('search', searchSchema);
 
 module.exports = Search;

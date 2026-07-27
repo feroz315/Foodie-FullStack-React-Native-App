@@ -58,6 +58,7 @@ const Home = () => {
   const cartItems = useSelector(selectcartItems);
   const navigation = useNavigation();
 
+  
   // const data = [
   //   {id: 1, source: require('../assets/images/menhoodi.jpg')},
   // ];
@@ -388,7 +389,6 @@ const styles = StyleSheet.create({
     marginLeft: scale(2),
   },
 });
-
 
 
 export default Home;

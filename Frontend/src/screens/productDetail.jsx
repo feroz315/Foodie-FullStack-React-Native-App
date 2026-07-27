@@ -8,8 +8,7 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  SafeAreaView,
-  
+  SafeAreaView, 
 } from 'react-native';
 import {COLORS, FONTS, SIZES} from '../const/colors';
 import {useNavigation} from '@react-navigation/native';
@@ -337,7 +336,6 @@ scrollContent: {
   },
 
 });
-
 
 
 export default ProductDetail;

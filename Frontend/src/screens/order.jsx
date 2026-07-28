@@ -14,7 +14,7 @@ import {  useSelector } from 'react-redux';
 import { selectcartItems, selectTotal } from '../state/CartSlics';
 import { useNavigation } from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
-import {CountryPicker} from "react-native-country-codes-picker";
+// import {CountryPicker} from "react-native-country-codes-picker";
 
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 

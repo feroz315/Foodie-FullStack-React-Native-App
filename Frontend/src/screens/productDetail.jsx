@@ -136,7 +136,7 @@ const ProductDetail = ({route}) => {
       <View style={styles.bottomBar}>
         <View style={styles.priceContainer}>
             <Text style={styles.bottomPriceLabel}>Total Price</Text>
-            <Text style={styles.bottomPrice}>{item.price}</Text>
+            <Text style={styles.bottomPrice}>${item.price}</Text>
         </View>
         <TouchableOpacity style={styles.addToCartButton} onPress={handleAddToCart}>
           <Text style={styles.addToCartText}>Add to Cart</Text>

@@ -108,7 +108,7 @@ const handleSubmit = () => {
        })
        else {
             console.log("work" )
-            navigation.navigate("delivery")
+            navigation.navigate("map")
             setCustomerName('');
             setCustomerEmail('');
             setCustomerAddress('');

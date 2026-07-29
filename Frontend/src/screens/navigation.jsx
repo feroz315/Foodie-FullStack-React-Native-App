@@ -8,8 +8,10 @@ import Home from './home';
 import ProductDetail from './productDetail';
 import Search from './search';
 import Cart from './cart';
+import Checkout from './checkout';
 import OrderForm from './order';
 import DeliveryMap from './deliveryMap';
+
 
 
 const Stack = createStackNavigator();
@@ -31,6 +33,7 @@ const Navigation = () => {
         <Stack.Screen name="productdetail" component={ProductDetail} />
         <Stack.Screen name="search" component={Search} />
         <Stack.Screen name="cart" component={Cart} />
+        <Stack.Screen name="checkout" component={Checkout} />
         <Stack.Screen name="order" component={OrderForm} />
         <Stack.Screen name="map" component={DeliveryMap} />
         

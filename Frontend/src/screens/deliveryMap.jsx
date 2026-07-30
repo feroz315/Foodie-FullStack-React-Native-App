@@ -100,7 +100,7 @@ const DeliveryMap = () => {
           </TouchableOpacity>
           
         )}
-            <TouchableOpacity style={styles.button} onPress={() => navigation.replace('profile')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.replace('home')}>
             <Text style={styles.buttonText}>Dispatch Now</Text>
           </TouchableOpacity>        
         {/* <Button title="Drop Pin" onPress={() => showPinToast(newPin, coordinate)} /> */}

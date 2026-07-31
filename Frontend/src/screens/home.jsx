@@ -21,7 +21,6 @@ import axios from 'axios';
 import Search from './search';
 
 
-
 const {width: screenWidth} = Dimensions.get('window');
 
 const URL_API = "https://mocki.io/v1/374293e2-9b1e-4191-bd95-33f4aa85a8a6";

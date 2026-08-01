@@ -7,7 +7,6 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 
 
-
 const DeliveryMap = () => {
   const [pins, setPins] = useState([]);
   const [isDroppingPin, setIsDroppingPin] = useState(false);
@@ -107,7 +106,7 @@ const DeliveryMap = () => {
         {/* <Button title="Drop Pin" onPress={() => showPinToast(newPin, coordinate)} /> */}
 
        </View>
-    </View>
+     </View>
   );
 };
 

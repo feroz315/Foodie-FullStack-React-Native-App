@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import { COLORS } from '../const/colors';
+import search from '../const/icons';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {selectcartItems} from '../state/CartSlics';
@@ -100,7 +101,7 @@ const Home = () => {
     getdata();
   }, []);
 
-  
+ 
   
   
   return (
@@ -114,6 +115,36 @@ const Home = () => {
           <View>
              <Text style={styles.username}>Sunny </Text>
           </View>
+
+    <View style={styles.searchicon}>
+        <TouchableOpacity
+            style={{
+              height: verticalScale(28),
+              width: scale(30),
+              marginRight: scale(10),
+              // backgroundColor: COLORS.white,
+              // justifyContent: 'center',
+              // alignItems: 'center',
+              // borderRadius: moderateScale(25),
+            }}
+            onPress={() => navigation.openDrawer()}>
+             {/* <Image source={search}
+              style={{
+                  width: scale(330),
+                  height: verticalScale(250),
+                  borderRadius: moderateScale(15),
+                }}
+
+             />   */}
+              <Text
+                style={{
+                  color: 'black',
+                  fontSize: moderateScale(12),
+                  fontWeight: 'bold',
+                }}>
+                Searc
+              </Text>
+          </TouchableOpacity>
 
           <TouchableOpacity
             style={{
@@ -136,7 +167,9 @@ const Home = () => {
                 {cartItems.length}
               </Text>
             </View>
-          </TouchableOpacity>
+           </TouchableOpacity>
+
+          </View>
         </View>
 
       <Search />
@@ -267,6 +300,15 @@ const styles = StyleSheet.create({
     paddingTop: verticalScale(10),
     paddingBottom: verticalScale(10),
   },
+  searchicon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: scale(5),
+    paddingTop: verticalScale(10),
+    paddingBottom: verticalScale(10),
+  },
+  
   greeting: {
     fontSize: moderateScale(16),
     color: '#8D8D8D',

@@ -101,8 +101,7 @@ const Home = () => {
     getdata();
   }, []);
 
- 
-  
+   
   
   return (
     <SafeAreaView style={styles.container}>

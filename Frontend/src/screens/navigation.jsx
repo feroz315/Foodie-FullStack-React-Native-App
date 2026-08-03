@@ -44,7 +44,7 @@ const Navigation = () => {
       <Drawer.Navigator screenOptions={{ headerShown: false }}>
         {/* Hide Drawer Header because Stack Navigator will manage its own header */}
         <Drawer.Screen 
-          name="HomeStack" 
+          name="home" 
           component={HomeStackNavigator} 
           options={{ drawerLabel: 'Home Dashboard' }}
         />
@@ -75,9 +75,6 @@ const Navigation = () => {
 
   );
 };
-
-
-
 
 
 

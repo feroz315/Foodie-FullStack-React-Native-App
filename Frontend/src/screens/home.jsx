@@ -96,6 +96,9 @@ const Home = () => {
 //   }
   // }
 
+//   const handleSearchBarClick = () => {
+//   navigation.openDrawer();
+// };
 
   useEffect(() => {
     getdata();
@@ -126,7 +129,7 @@ const Home = () => {
               // alignItems: 'center',
               // borderRadius: moderateScale(25),
             }}
-            onPress={() => navigation.openDrawer()}>
+            >
              {/* <Image source={search}
               style={{
                   width: scale(330),

@@ -24,7 +24,7 @@ import Search from './search';
 
 const {width: screenWidth} = Dimensions.get('window');
 
-const URL_API = "https://mocki.io/v1/374293e2-9b1e-4191-bd95-33f4aa85a8a6";
+const URL_API = "https://mocki.io/v1/5d2b1937-2ae7-4461-9aa0-2247e7a0aeb6";
 
 
 
@@ -265,7 +265,7 @@ const Home = () => {
                 <Text style={styles.productCategory}>{item.category}</Text>
                 <Text style={styles.productTitle}>{item.title}</Text>
                 <View style={styles.productFooter}>
-                  <Text style={styles.productPrice}>${item.price}</Text>
+                  <Text style={styles.productPrice}>{item.price}</Text>
                   <View style={styles.ratingContainer}>
                     <Text style={styles.ratingText}>{item.rating}</Text>
                   </View>

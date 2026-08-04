@@ -3,9 +3,9 @@
   {
     "id": 1,
     "title": "Rolls",
-    "price": "Rs.250",
+    "price": "$25",
     "description": "Classic delight with 100% real mozzarella cheese",
-    "images": "require('../assets/icons/ch-roll.png')",
+    "images": "https://www.pngwing.com/en/free-png-zqkxx",
     "rating": 4.3,
     "reviews": 35
    
@@ -13,9 +13,9 @@
   {
     "id": 2,
     "title": "Burger",
-    "price": "Rs.200",
+    "price": "$20",
     "description": "Classic delight with 100% real Burger",
-    "images": "require('../assets/icons/burgers.png')",
+    "images": "https://www.pngwing.com/en/free-png-bkbvr",
     "rating": 4.1,
     "reviews": 14     
         
@@ -24,29 +24,29 @@
   {
     "id": 3,
     "title": "Bar B-Q",
-    "price": "Rs.450",
+    "price": "$140",
     "description": "Classic delight with 100% real Bar BQ",
-    "images": "require('../assets/icons/barbq.png')",
+    "images": "https://www.pngwing.com/en/free-png-pbnsy",
     "rating": 4.3,
     "reviews": 42     
   
   },
   {
     "id": 4,
-    "title": "Handi",
-    "price": "Rs.1050",
+    "title": "Italian Pizza",
+    "price": "$50",
     "description": "Classic delight with 100% real mozzarella",
-    "images": "require('../assets/icons/handi.png')",
+    "images": "https://www.pngwing.com/en/free-png-bzyar",
     "rating": 4.7,
     "reviews": 27
       
   },
   {
     "id": 5,
-    "title": "Karhai",
-    "price": "Rs.1200",
+    "title": "beef grilled",
+    "price": "$200",
     "description": "Classic delight with 100%",
-    "images": "require('../assets/icons/chicken-karahi.png')",
+    "images": "https://www.pngwing.com/en/free-png-zvhqk",
     "rating": 4.8,
     "reviews": 31    
   
@@ -54,74 +54,51 @@
   {
     "id": 6,
     "title": "Fish",
-    "price": "Rs.1250",
+    "price": "$250",
     "description": "delight with 100% ",
-    "images": "require('../assets/icons/fish.png')",
+    "images": "https://www.pngwing.com/en/free-png-yiivv",
     "rating": 4.8,
     "reviews": 33
     
    },
   {
     "id": 7,
-    "title": "Dal\nSabzi",
-    "price": "Rs.350",
+    "title": "bread Baguette",
+    "price": "$150",
     "description": "Classic delight",
-    "images": "require('../assets/icons/dal.png')",
+    "images": "https://www.pngwing.com/en/free-png-bzzhn",
     "rating": 3.8,
     "reviews": 14   
 
    },
   {
     "id": 8,
-    "title": "Chesse Paratha",
-    "price": "Rs.200",
+    "title": "Spaghetti alla",
+    "price": "$100",
     "description": "Classic delight with 100% real Paratha",
-    "images": "require('../assets/icons/paratha.png')",
+    "images": "https://www.pngwing.com/en/free-png-pnhvq",
     "rating": 3.7,
     "reviews": 21  
 
    },
   {
     "id": 9,
-    "title": "Sand\nWiches",
-    "price": "Rs.350",
+    "title": "Ham and cheese",
+    "price": "$250",
     "description": "Classic delight with 100% real",
-    "images": "require('../assets/icons/sandwich.png')",
+    "images": "https://www.pngwing.com/en/free-png-iknht",
     "rating": 4.1,
     "reviews": 11
 },
-  {
+ {
     "id": 10,
-    "title": "French\nFries",
-    "price": "Rs.100",
-    "description": "delight with 100%",
-    "images":  "require('../assets/icons/french-fries.png')",
-    "rating": 3.7,
-    "reviews": 12
-
-  },
-  
-  {
-    "id": 11,
-    "title": "Drinks",
-    "price": "Rs.150",
-    "description": "cold drink",
-    "images": "require('../assets/icons/cold-drinks.png')",
+    "title": "fried chicken",
+    "price": "$250",
+    "description": "Spicy fried chicken",
+    "images": "https://www.pngwing.com/en/free-png-bnaha",
     "rating": 3.7,
     "reviews": 7
     
-  },
-  {
-    "id": 12,
-    "title": "Sleek Wireless Headphone & Inked Earbud Set",
-    "price": 44,
-    "description": "Experience the fusion of style and sound with this sophisticated audio set featuring a pair of sleek, white wireless headphones offering crystal-clear sound quality and over-ear comfort.",
-    "category": "Electronics",
-    "images": "https://i.imgur.com/yVeIeDa.jpeg",
-    "currency_code":"USD",
-    "rating": 4.8,
-    "reviews": 124
-    
   }
-  
+    
  ]

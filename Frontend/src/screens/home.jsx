@@ -14,7 +14,7 @@ import {
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import { COLORS } from '../const/colors';
 import search from '../const/icons';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation, DrawerActions } from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {selectcartItems} from '../state/CartSlics';
 // import Carousel from 'react-native-reanimated-carousel';
@@ -96,9 +96,9 @@ const Home = () => {
 //   }
   // }
 
-//   const handleSearchBarClick = () => {
-//   navigation.openDrawer();
-// };
+  const handleSearchBarClick = () => {
+  navigation.openDrawer();
+};
 
   useEffect(() => {
     getdata();
@@ -129,7 +129,8 @@ const Home = () => {
               // alignItems: 'center',
               // borderRadius: moderateScale(25),
             }}
-            >
+            // onPress={handleSearchBarClick}>      
+            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
              {/* <Image source={search}
               style={{
                   width: scale(330),
@@ -146,6 +147,7 @@ const Home = () => {
                 }}>
                 Searc
               </Text>
+              
           </TouchableOpacity>
 
           <TouchableOpacity

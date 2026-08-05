@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {StatusBar} from 'react-native';
 
@@ -17,10 +16,9 @@ import DrawerNavigation from './drawer';
 const Stack = createStackNavigator();
 
 
-const Navigation = () => {
+const StackNavigation = () => {
   return (
-
-    <NavigationContainer>
+<>
         <StatusBar
           barStyle="dark-content"
           backgroundColor="transparent"
@@ -37,15 +35,14 @@ const Navigation = () => {
         <Stack.Screen name="checkout" component={Checkout} />
         <Stack.Screen name="order" component={OrderForm} />
         <Stack.Screen name="map" component={DeliveryMap} />
-        <Stack.Screen name="drawer" component={DrawerNavigation} />
-        
+        <Stack.Screen name="drawer" component={DrawerNavigation} /> 
         
       </Stack.Navigator>
-    </NavigationContainer>
+  </>
 
   );
 };
 
 
 
-export default Navigation;
+export default StackNavigation;

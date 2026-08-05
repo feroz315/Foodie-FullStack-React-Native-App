@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux';
-import Navigation from "./src/screens/navigation";
+import StackNavigation from "./src/screens/navigation";
+import { NavigationContainer } from '@react-navigation/native';
 
 import { store } from "./src/state/Store";
 // import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -8,7 +9,9 @@ const App = () => {
  return (
 <>
   <Provider store={store}>    
-    <Navigation />
+   <NavigationContainer>
+    <StackNavigation />
+    </NavigationContainer>
        </Provider> 
  
 </>

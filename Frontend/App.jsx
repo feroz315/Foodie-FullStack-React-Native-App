@@ -3,7 +3,6 @@ import StackNavigation from "./src/screens/navigation";
 import { NavigationContainer } from '@react-navigation/native';
 
 import { store } from "./src/state/Store";
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
  return (

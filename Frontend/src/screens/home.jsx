@@ -1,715 +1,510 @@
-import {useState, useEffect} from 'react';
-import {
-  View,
-  StatusBar,
-  Dimensions,
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  FlatList,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
-import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
-import { COLORS } from '../const/colors';
-import search from '../const/icons';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
-import {useSelector} from 'react-redux';
-import {selectcartItems} from '../state/CartSlics';
-// import Carousel from 'react-native-reanimated-carousel';
-import axios from 'axios';
-import Search from './search';
+// import {useState, useEffect} from 'react';
+// import {
+//   View,
+//   StatusBar,
+//   Dimensions,
+//   SafeAreaView,
+//   Text,
+//   StyleSheet,
+//   FlatList,
+//   Image,
+//   TouchableOpacity,
+//   ScrollView,
+// } from 'react-native';
+// import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
+// import { COLORS } from '../const/colors';
+// import search from '../const/icons';
+// import { useNavigation, DrawerActions } from '@react-navigation/native';
+// import {useSelector} from 'react-redux';
+// import {selectcartItems} from '../state/CartSlics';
+// // import Carousel from 'react-native-reanimated-carousel';
+// import axios from 'axios';
+// import Search from './search';
 
 
-const {width: screenWidth} = Dimensions.get('window');
+// const {width: screenWidth} = Dimensions.get('window');
 
-const URL_API = "https://mocki.io/v1/5d2b1937-2ae7-4461-9aa0-2247e7a0aeb6";
+// const URL_API = "https://mocki.io/v1/5d2b1937-2ae7-4461-9aa0-2247e7a0aeb6";
 
 
 
-// --- MOCK DATA ---
-const categories = [
-  {id: '1', name: 'Pizza', icon: 'phone-portrait-outline'},
-  {id: '2', name: 'Burger King', icon: 'shirt-outline'},
-  {id: '3', name: 'Taco Bell', icon: 'home-outline'},
-  {id: '4', name: 'Strawberry', icon: 'fitness-outline'},
-  {id: '5', name: 'Fast Food', icon: 'flower-outline'},
-];
+// // --- MOCK DATA ---
+// const categories = [
+//   {id: '1', name: 'Pizza', icon: 'phone-portrait-outline'},
+//   {id: '2', name: 'Burger King', icon: 'shirt-outline'},
+//   {id: '3', name: 'Taco Bell', icon: 'home-outline'},
+//   {id: '4', name: 'Strawberry', icon: 'fitness-outline'},
+//   {id: '5', name: 'Fast Food', icon: 'flower-outline'},
+// ];
 
-// --- COMPONENTS -+4
+// // --- COMPONENTS -+4
 
-const CategoryItem = ({item, active, onPress}) => (
-  <TouchableOpacity
-    style={[styles.categoryItem, active && styles.categoryItemActive]}>
-    {/* <Icon 
-      name={item.icon} 
-      size={20} 
-      color={active ? '#FFFFFF' : '#8D8D8D'} 
-    /> */}
-    <Text style={[styles.categoryText, active && styles.categoryTextActive]}>
-      {item.name}
-    </Text>
-  </TouchableOpacity>
-);
+// const CategoryItem = ({item, active, onPress}) => (
+//   <TouchableOpacity
+//     style={[styles.categoryItem, active && styles.categoryItemActive]}>
+//     {/* <Icon 
+//       name={item.icon} 
+//       size={20} 
+//       color={active ? '#FFFFFF' : '#8D8D8D'} 
+//     /> */}
+//     <Text style={[styles.categoryText, active && styles.categoryTextActive]}>
+//       {item.name}
+//     </Text>
+//   </TouchableOpacity>
+// );
 
-const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [activeCategory, setActiveCategory] = useState('1');
+// const Home = () => {
+//   const [products, setProducts] = useState([]);
+//   const [activeCategory, setActiveCategory] = useState('1');
   
-  const cartItems = useSelector(selectcartItems);
-  const navigation = useNavigation();
+//   const cartItems = useSelector(selectcartItems);
+//   const navigation = useNavigation();
 
   
-  // const data = [
-  //   {id: 1, source: require('../assets/images/menhoodi.jpg')},
-  // ];
+//   // const data = [
+//   //   {id: 1, source: require('../assets/images/menhoodi.jpg')},
+//   // ];
 
 
-  const getdata = async () => {
-    try {
-      const res = await axios.get(URL_API);
-      console.log(res.data);
-      setProducts(res.data);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
+//   const getdata = async () => {
+//     try {
+//       const res = await axios.get(URL_API);
+//       console.log(res.data);
+//       setProducts(res.data);
+//     } catch (error) {
+//       console.log('error', error);
+//     }
+//   };
 
 
- // const fetchProducts = async () => {
-//   try {
-//     const response = await fetch('http://192.168.1.9:3000/api/products', {
-//       method: "POST",
-//       headers:{
-//        'Content-Type': 'application/json', 
-//       },
-//       body:JSON.stringify(URL_API),
-//     })
-//     const data = await response.json();
-//     if(data){
-//       console.log("API", data)
-//       setProducts(data)
-//      }
-//     }catch (error) {
-//     console.log("e", error)
-//   }
-  // }
+//  // const fetchProducts = async () => {
+// //   try {
+// //     const response = await fetch('http://192.168.1.9:3000/api/products', {
+// //       method: "POST",
+// //       headers:{
+// //        'Content-Type': 'application/json', 
+// //       },
+// //       body:JSON.stringify(URL_API),
+// //     })
+// //     const data = await response.json();
+// //     if(data){
+// //       console.log("API", data)
+// //       setProducts(data)
+// //      }
+// //     }catch (error) {
+// //     console.log("e", error)
+// //   }
+//   // }
 
-  const handleSearchBarClick = () => {
-  navigation.openDrawer();
-};
+//   const handleSearchBarClick = () => {
+//   navigation.openDrawer();
+// };
 
-  useEffect(() => {
-    getdata();
-  }, []);
+//   useEffect(() => {
+//     getdata();
+//   }, []);
 
    
   
-  return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F2F2F2" />
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.scrollContent}>
-        {/* --- HEADER --- */}
-        <View style={styles.header}>
-          <View>
-             <Text style={styles.username}>Sunny </Text>
-          </View>
+//   return (
+//     <SafeAreaView style={styles.container}>
+//       <StatusBar barStyle="dark-content" backgroundColor="#F2F2F2" />
+//       <ScrollView
+//         showsVerticalScrollIndicator={false}
+//         contentContainerStyle={styles.scrollContent}>
+//         {/* --- HEADER --- */}
+//         <View style={styles.header}>
+//           <View>
+//              <Text style={styles.username}>Sunny </Text>
+//           </View>
 
-    <View style={styles.searchicon}>
-        <TouchableOpacity
-            style={{
-              height: verticalScale(28),
-              width: scale(30),
-              marginRight: scale(10),
-              // backgroundColor: COLORS.white,
-              // justifyContent: 'center',
-              // alignItems: 'center',
-              // borderRadius: moderateScale(25),
-            }}
-            // onPress={handleSearchBarClick}>      
-            onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-             {/* <Image source={search}
-              style={{
-                  width: scale(330),
-                  height: verticalScale(250),
-                  borderRadius: moderateScale(15),
-                }}
+//     <View style={styles.searchicon}>
+//         <TouchableOpacity
+//             style={{
+//               height: verticalScale(28),
+//               width: scale(30),
+//               marginRight: scale(10),
+//               // backgroundColor: COLORS.white,
+//               // justifyContent: 'center',
+//               // alignItems: 'center',
+//               // borderRadius: moderateScale(25),
+//             }}
+//             // onPress={handleSearchBarClick}>      
+//             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+//              {/* <Image source={search}
+//               style={{
+//                   width: scale(330),
+//                   height: verticalScale(250),
+//                   borderRadius: moderateScale(15),
+//                 }}
 
-             />   */}
-              <Text
-                style={{
-                  color: 'black',
-                  fontSize: moderateScale(12),
-                  fontWeight: 'bold',
-                }}>
-                Searc
-              </Text>
+//              />   */}
+//               <Text
+//                 style={{
+//                   color: 'black',
+//                   fontSize: moderateScale(12),
+//                   fontWeight: 'bold',
+//                 }}>
+//                 Searc
+//               </Text>
               
-          </TouchableOpacity>
+//           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={{
-              height: verticalScale(28),
-              width: scale(30),
-              marginRight: scale(5),
-              backgroundColor: COLORS.white,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: moderateScale(25),
-            }}
-            onPress={() => navigation.navigate('cart')}>
-            <View>
-              <Text
-                style={{
-                  color: 'black',
-                  fontSize: moderateScale(16),
-                  fontWeight: 'bold',
-                }}>
-                {cartItems.length}
-              </Text>
-            </View>
-           </TouchableOpacity>
+//           <TouchableOpacity
+//             style={{
+//               height: verticalScale(28),
+//               width: scale(30),
+//               marginRight: scale(5),
+//               backgroundColor: COLORS.white,
+//               justifyContent: 'center',
+//               alignItems: 'center',
+//               borderRadius: moderateScale(25),
+//             }}
+//             onPress={() => navigation.navigate('cart')}>
+//             <View>
+//               <Text
+//                 style={{
+//                   color: 'black',
+//                   fontSize: moderateScale(16),
+//                   fontWeight: 'bold',
+//                 }}>
+//                 {cartItems.length}
+//               </Text>
+//             </View>
+//            </TouchableOpacity>
 
-          </View>
-        </View>
+//           </View>
+//         </View>
 
-      <Search />
+//       <Search />
 
-        {/* --- FEATURED BANNER --- */}
+//         {/* --- FEATURED BANNER --- */}
 
-        {/* <Carousel
-          width={screenWidth}
-          height={250}
-          data={data}
-          renderItem={({item, index}) => (
-            <View
-              style={{
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: scale(20),
-              }}>
-              <Image
-                source={item.source}
-                style={{
-                  width: scale(330),
-                  height: verticalScale(250),
-                  borderRadius: moderateScale(15),
-                }}
-              />
-              <Text
-                style={{
-                  color: 'rgba(255,255,255,0.8)',
-                  marginTop: verticalScale(10),
-                }}>
-                Index: {index + 1}
-              </Text>
-            </View>
-          )}
-          loop={true}
-          autoPlay={true}
-          autoPlayInterval={3000}
-          mode="parallax"
-          modeConfig={{
-            parallaxScrollingScale: 0.9,
-            parallaxScrollingOffset: 50,
-            parallaxAdjacentItemScale: 0.8,
-          }}
-        /> */}
+//         {/* <Carousel
+//           width={screenWidth}
+//           height={250}
+//           data={data}
+//           renderItem={({item, index}) => (
+//             <View
+//               style={{
+//                 flex: 1,
+//                 justifyContent: 'center',
+//                 alignItems: 'center',
+//                 padding: scale(20),
+//               }}>
+//               <Image
+//                 source={item.source}
+//                 style={{
+//                   width: scale(330),
+//                   height: verticalScale(250),
+//                   borderRadius: moderateScale(15),
+//                 }}
+//               />
+//               <Text
+//                 style={{
+//                   color: 'rgba(255,255,255,0.8)',
+//                   marginTop: verticalScale(10),
+//                 }}>
+//                 Index: {index + 1}
+//               </Text>
+//             </View>
+//           )}
+//           loop={true}
+//           autoPlay={true}
+//           autoPlayInterval={3000}
+//           mode="parallax"
+//           modeConfig={{
+//             parallaxScrollingScale: 0.9,
+//             parallaxScrollingOffset: 50,
+//             parallaxAdjacentItemScale: 0.8,
+//           }}
+//         /> */}
 
-        {/* --- CATEGORIES --- */}
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Category</Text>
-          <Text style={styles.seeAll}>See All</Text>
-          </View>
+//         {/* --- CATEGORIES --- */}
+//         <View style={styles.sectionHeader}>
+//           <Text style={styles.sectionTitle}>Category</Text>
+//           <Text style={styles.seeAll}>See All</Text>
+//           </View>
 
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          data={categories}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <CategoryItem
-              item={item}
-              active={activeCategory === item.id}
-              onPress={() => setActiveCategory(item.id)}
-            />
-          )}
-          contentContainerStyle={styles.categoryList}
-        />
+//         <FlatList
+//           horizontal
+//           showsHorizontalScrollIndicator={false}
+//           data={categories}
+//           keyExtractor={item => item.id}
+//           renderItem={({item}) => (
+//             <CategoryItem
+//               item={item}
+//               active={activeCategory === item.id}
+//               onPress={() => setActiveCategory(item.id)}
+//             />
+//           )}
+//           contentContainerStyle={styles.categoryList}
+//         />
 
-        {/* --- PRODUCTS --- */}
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Popular Products</Text>
-          <Text style={styles.seeAll}>See All</Text>
-         </View>
+//         {/* --- PRODUCTS --- */}
+//         <View style={styles.sectionHeader}>
+//           <Text style={styles.sectionTitle}>Popular Products</Text>
+//           <Text style={styles.seeAll}>See All</Text>
+//          </View>
 
-        <FlatList
-          data={products}
-          numColumns={2}
-          scrollEnabled={false}
-          keyExtractor={item => item.id.toString()}
-          columnWrapperStyle={{
-            justifyContent: 'space-between',
-            marginBottom: verticalScale(20),
-          }}
-          renderItem={({index, item}) => (
-            <TouchableOpacity
-              style={styles.productCard}
-              onPress={() => {
-                navigation.navigate('productdetail', {...item});
-              }}>
-              <Image source={{uri: item.images}} style={styles.productImage} />
-              <View style={styles.productInfo}>
-                <Text style={styles.productCategory}>{item.category}</Text>
-                <Text style={styles.productTitle}>{item.title}</Text>
-                <View style={styles.productFooter}>
-                  <Text style={styles.productPrice}>{item.price}</Text>
-                  <View style={styles.ratingContainer}>
-                    <Text style={styles.ratingText}>{item.rating}</Text>
-                  </View>
-                </View>
-              </View>
-            </TouchableOpacity>
-          )}
-        />
-      </ScrollView>
-     </SafeAreaView>
-  );
-};
+//         <FlatList
+//           data={products}
+//           numColumns={2}
+//           scrollEnabled={false}
+//           keyExtractor={item => item.id.toString()}
+//           columnWrapperStyle={{
+//             justifyContent: 'space-between',
+//             marginBottom: verticalScale(20),
+//           }}
+//           renderItem={({index, item}) => (
+//             <TouchableOpacity
+//               style={styles.productCard}
+//               onPress={() => {
+//                 navigation.navigate('productdetail', {...item});
+//               }}>
+//               <Image source={{uri: item.images}} style={styles.productImage} />
+//               <View style={styles.productInfo}>
+//                 <Text style={styles.productCategory}>{item.category}</Text>
+//                 <Text style={styles.productTitle}>{item.title}</Text>
+//                 <View style={styles.productFooter}>
+//                   <Text style={styles.productPrice}>{item.price}</Text>
+//                   <View style={styles.ratingContainer}>
+//                     <Text style={styles.ratingText}>{item.rating}</Text>
+//                   </View>
+//                 </View>
+//               </View>
+//             </TouchableOpacity>
+//           )}
+//         />
+//       </ScrollView>
+//      </SafeAreaView>
+//   );
+// };
 
-// --- STYLES ---
+// // --- STYLES ---
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F2F2F2',
-    paddingTop: verticalScale(20), // Adjust for status bar
-  },
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#F2F2F2',
+//     paddingTop: verticalScale(20), // Adjust for status bar
+//   },
 
-  scrollContent: {
-    paddingHorizontal: scale(5),
-    paddingBottom: verticalScale(50),
-  },
-  // Header Styles
+//   scrollContent: {
+//     paddingHorizontal: scale(5),
+//     paddingBottom: verticalScale(50),
+//   },
+//   // Header Styles
 
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: scale(20),
-    paddingTop: verticalScale(10),
-    paddingBottom: verticalScale(10),
-  },
-  searchicon: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: scale(5),
-    paddingTop: verticalScale(10),
-    paddingBottom: verticalScale(10),
-  },
+//   header: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     paddingHorizontal: scale(20),
+//     paddingTop: verticalScale(10),
+//     paddingBottom: verticalScale(10),
+//   },
+//   searchicon: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     paddingHorizontal: scale(5),
+//     paddingTop: verticalScale(10),
+//     paddingBottom: verticalScale(10),
+//   },
   
-  greeting: {
-    fontSize: moderateScale(16),
-    color: '#8D8D8D',
-  },
-  username: {
-    fontSize: moderateScale(22),
-    fontWeight: 'bold',
-    color: '#1A1A1A',
-  },
+//   greeting: {
+//     fontSize: moderateScale(16),
+//     color: '#8D8D8D',
+//   },
+//   username: {
+//     fontSize: moderateScale(22),
+//     fontWeight: 'bold',
+//     color: '#1A1A1A',
+//   },
 
-  // Category Styles
+//   // Category Styles
 
-  sectionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: scale(20),
-    marginTop: verticalScale(10),
-    marginBottom: verticalScale(10),
-  },
-  sectionTitle: {
-    fontSize: moderateScale(18),
-    fontWeight: 'bold',
-    color: '#1A1A1A',
-    fontFamily: 'Roboto-Bold'
-  },
-  seeAll: {
-    fontSize: moderateScale(14),
-    color: '#FF6B6B',
-    fontWeight: '600',
-  },
-  categoryList: {
-    paddingHorizontal: scale(15),
-    marginVertical: verticalScale(5),
-  },
-  categoryItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    paddingVertical: verticalScale(10),
-    paddingHorizontal: scale(12),
-    borderRadius: moderateScale(12),
-    marginRight: scale(12),
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  categoryItemActive: {
-    backgroundColor: '#FF6B6B',
-  },
-  categoryText: {
-    marginLeft: scale(5),
-    fontSize: moderateScale(13),
-    fontWeight: '600',
-    color: '#8D8D8D',
-  },
-  categoryTextActive: {
-    color: '#FFFFFF',
-  },
+//   sectionHeader: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     paddingHorizontal: scale(20),
+//     marginTop: verticalScale(10),
+//     marginBottom: verticalScale(10),
+//   },
+//   sectionTitle: {
+//     fontSize: moderateScale(18),
+//     fontWeight: 'bold',
+//     color: '#1A1A1A',
+//     fontFamily: 'Roboto-Bold'
+//   },
+//   seeAll: {
+//     fontSize: moderateScale(14),
+//     color: '#FF6B6B',
+//     fontWeight: '600',
+//   },
+//   categoryList: {
+//     paddingHorizontal: scale(15),
+//     marginVertical: verticalScale(5),
+//   },
+//   categoryItem: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     backgroundColor: '#FFFFFF',
+//     paddingVertical: verticalScale(10),
+//     paddingHorizontal: scale(12),
+//     borderRadius: moderateScale(12),
+//     marginRight: scale(12),
+//     shadowColor: '#000',
+//     shadowOffset: {width: 0, height: 1},
+//     shadowOpacity: 0.05,
+//     shadowRadius: 2,
+//     elevation: 2,
+//   },
+//   categoryItemActive: {
+//     backgroundColor: '#FF6B6B',
+//   },
+//   categoryText: {
+//     marginLeft: scale(5),
+//     fontSize: moderateScale(13),
+//     fontWeight: '600',
+//     color: '#8D8D8D',
+//   },
+//   categoryTextActive: {
+//     color: '#FFFFFF',
+//   },
 
-  // Product Styles
-  productCard: {
-    width: scale(160),
-    height: verticalScale(235),
-    backgroundColor: '#FFFFFF',
-    borderRadius: moderateScale(25),
-    marginLeft: scale(5),
-    marginRight: scale(5),
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 4,
-    overflow: 'hidden',
-  },
-  productImage: {
-    width: '100%',
-    height: verticalScale(130),
-    resizeMode: 'cover',
-  },
-  productInfo: {
-    padding: verticalScale(8),
-  },
-  productCategory: {
-    fontSize: moderateScale(12),
-    color: '#8D8D8D',
-    marginBottom: verticalScale(3),
-  },
-  productTitle: {
-    fontSize: moderateScale(15),
-    fontWeight: 'bold',
-    fontFamily: 'Roboto-Bold',
-    color: '#1A1A1A',
-    marginBottom: verticalScale(8),
-  },
-  productFooter: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  productPrice: {
-    fontSize: moderateScale(15),
-    fontWeight: 'bold',
-    letterSpacing: 0.5,
-    textAlign: 'center',
-    color: '#FF6B6B',
-  },
-  ratingContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFF5E6',
-    paddingHorizontal: scale(6),
-    paddingVertical: verticalScale(2),
-    borderRadius: moderateScale(6),
-  },
-  ratingText: {
-    fontSize: moderateScale(10),
-    fontWeight: 'bold',
-    color: '#FFB800',
-    marginLeft: scale(2),
-  },
-});
+//   // Product Styles
+//   productCard: {
+//     width: scale(160),
+//     height: verticalScale(235),
+//     backgroundColor: '#FFFFFF',
+//     borderRadius: moderateScale(25),
+//     marginLeft: scale(5),
+//     marginRight: scale(5),
+//     shadowColor: '#000',
+//     shadowOffset: {width: 0, height: 2},
+//     shadowOpacity: 0.1,
+//     shadowRadius: 5,
+//     elevation: 4,
+//     overflow: 'hidden',
+//   },
+//   productImage: {
+//     width: '100%',
+//     height: verticalScale(130),
+//     resizeMode: 'cover',
+//   },
+//   productInfo: {
+//     padding: verticalScale(8),
+//   },
+//   productCategory: {
+//     fontSize: moderateScale(12),
+//     color: '#8D8D8D',
+//     marginBottom: verticalScale(3),
+//   },
+//   productTitle: {
+//     fontSize: moderateScale(15),
+//     fontWeight: 'bold',
+//     fontFamily: 'Roboto-Bold',
+//     color: '#1A1A1A',
+//     marginBottom: verticalScale(8),
+//   },
+//   productFooter: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//   },
+//   productPrice: {
+//     fontSize: moderateScale(15),
+//     fontWeight: 'bold',
+//     letterSpacing: 0.5,
+//     textAlign: 'center',
+//     color: '#FF6B6B',
+//   },
+//   ratingContainer: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     backgroundColor: '#FFF5E6',
+//     paddingHorizontal: scale(6),
+//     paddingVertical: verticalScale(2),
+//     borderRadius: moderateScale(6),
+//   },
+//   ratingText: {
+//     fontSize: moderateScale(10),
+//     fontWeight: 'bold',
+//     color: '#FFB800',
+//     marginLeft: scale(2),
+//   },
+// });
 
 
 
-export default Home;
+// export default Home;
 
 
 
 // // screens/HomeScreen.js
-// import React from 'react';
-// import {
-//   View,
-//   Text,
-//   StyleSheet,
-//   TouchableOpacity,
-//   SafeAreaView,
-// } from 'react-native';
-// import Icon from 'react-native-vector-icons/Ionicons';
 
-// const HomeScreen = ({ navigation, route }) => {
-//   const screenName = route.name;
+import React from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-//   return (
-//     <SafeAreaView style={styles.container}>
-//       <TouchableOpacity
-//         style={styles.menuButton}
-//         onPress={() => navigation.openDrawer()}
-//       >
-//         <Icon name="menu-outline" size={30} color="#333" />
-//       </TouchableOpacity>
-//       <View style={styles.content}>
-//         <Text style={styles.title}>{screenName}</Text>
-//         <Text style={styles.subtitle}>Welcome to the {screenName} Screen!</Text>
-//       </View>
-//     </SafeAreaView>
-//   );
-// };
+const Home = ({ navigation, route }) => {
+  const screenName = route.name;
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#f5f5f5',
-//   },
-//   menuButton: {
-//     position: 'absolute',
-//     top: 20,
-//     left: 20,
-//     zIndex: 1,
-//     padding: 10,
-//   },
-//   content: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     paddingHorizontal: 20,
-//   },
-//   title: {
-//     fontSize: 28,
-//     fontWeight: 'bold',
-//     color: '#333',
-//     marginBottom: 10,
-//   },
-//   subtitle: {
-//     fontSize: 16,
-//     color: '#666',
-//     textAlign: 'center',
-//   },
-// });
+  return (
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        style={styles.menuButton}
+        onPress={() => navigation.openDrawer()}
+      >
+        <Icon name="menu-outline" size={30} color="#333" />
+      </TouchableOpacity>
+      <View style={styles.content}>
+        <Text style={styles.title}>{screenName}</Text>
+        <Text style={styles.subtitle}>Welcome to the {screenName} Screen!</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-// export default HomeScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  menuButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 1,
+    padding: 10,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+  },
+});
 
+export default Home;
 
-// // components/CategoryDrawer.js (Alternative version with categories)
-// import React, { useState } from 'react';
-// import {
-//   View,
-//   Text,
-//   StyleSheet,
-//   TouchableOpacity,
-//   TextInput,
-//   FlatList,
-//   SectionList,
-//   SafeAreaView,
-// } from 'react-native';
-// import Icon from 'react-native-vector-icons/Ionicons';
-
-// // Sample data with sections
-// const SECTIONS = [
-//   {
-//     title: 'Main',
-//     data: [
-//       { id: '1', name: 'Dashboard', icon: 'home-outline' },
-//       { id: '2', name: 'Statistics', icon: 'stats-chart-outline' },
-//     ],
-//   },
-//   {
-//     title: 'Products',
-//     data: [
-//       { id: '3', name: 'All Products', icon: 'cube-outline' },
-//       { id: '4', name: 'Categories', icon: 'grid-outline' },
-//       { id: '5', name: 'Favorites', icon: 'heart-outline' },
-//     ],
-//   },
-//   {
-//     title: 'Account',
-//     data: [
-//       { id: '6', name: 'Profile', icon: 'person-outline' },
-//       { id: '7', name: 'Orders', icon: 'cart-outline' },
-//       { id: '8', name: 'Settings', icon: 'settings-outline' },
-//     ],
-//   },
-//   {
-//     title: 'Support',
-//     data: [
-//       { id: '9', name: 'Help Center', icon: 'help-circle-outline' },
-//       { id: '10', name: 'Feedback', icon: 'chatbubble-outline' },
-//     ],
-//   },
-// ];
-
-// const CategoryDrawer = ({ navigation }) => {
-//   const [searchQuery, setSearchQuery] = useState('');
-//   const [filteredData, setFilteredData] = useState(SECTIONS);
-
-//   const handleSearch = (text) => {
-//     setSearchQuery(text);
-//     if (text.trim() === '') {
-//       setFilteredData(SECTIONS);
-//     } else {
-//       const filtered = SECTIONS.map(section => ({
-//         ...section,
-//         data: section.data.filter(item =>
-//           item.name.toLowerCase().includes(text.toLowerCase())
-//         ),
-//       })).filter(section => section.data.length > 0);
-//       setFilteredData(filtered);
-//     }
-//   };
-
-//   const renderSectionHeader = ({ section: { title } }) => (
-//     <View style={styles.sectionHeader}>
-//       <Text style={styles.sectionTitle}>{title}</Text>
-//     </View>
-//   );
-
-//   const renderItem = ({ item }) => (
-//     <TouchableOpacity
-//       style={styles.drawerItem}
-//       onPress={() => {
-//         console.log(`Selected: ${item.name}`);
-//         navigation.closeDrawer();
-//       }}
-//     >
-//       <Icon name={item.icon} size={22} color="#555" style={styles.itemIcon} />
-//       <Text style={styles.itemText}>{item.name}</Text>
-//     </TouchableOpacity>
-//   );
-
-//   return (
-//     <SafeAreaView style={styles.container}>
-//       <View style={styles.header}>
-//         <Text style={styles.headerTitle}>Menu</Text>
-//       </View>
-
-//       <View style={styles.searchContainer}>
-//         <Icon name="search-outline" size={20} color="#666" />
-//         <TextInput
-//           style={styles.searchInput}
-//           placeholder="Search menu..."
-//           placeholderTextColor="#999"
-//           value={searchQuery}
-//           onChangeText={handleSearch}
-//         />
-//         {searchQuery.length > 0 && (
-//           <TouchableOpacity onPress={() => handleSearch('')}>
-//             <Icon name="close-circle" size={20} color="#666" />
-//           </TouchableOpacity>
-//         )}
-//       </View>
-
-//       {filteredData.length > 0 ? (
-//         <SectionList
-//           sections={filteredData}
-//           renderItem={renderItem}
-//           renderSectionHeader={renderSectionHeader}
-//           keyExtractor={(item) => item.id}
-//           showsVerticalScrollIndicator={false}
-//           contentContainerStyle={styles.listContent}
-//         />
-//       ) : (
-//         <View style={styles.emptyContainer}>
-//           <Icon name="search-outline" size={50} color="#ccc" />
-//           <Text style={styles.emptyText}>No results found</Text>
-//         </View>
-//       )}
-//     </SafeAreaView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//   },
-//   header: {
-//     padding: 20,
-//     paddingTop: 10,
-//     backgroundColor: '#6C63FF',
-//     borderBottomLeftRadius: 20,
-//     borderBottomRightRadius: 20,
-//   },
-//   headerTitle: {
-//     fontSize: 24,
-//     fontWeight: 'bold',
-//     color: '#fff',
-//   },
-//   searchContainer: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     backgroundColor: '#f0f0f0',
-//     marginHorizontal: 16,
-//     marginTop: 16,
-//     paddingHorizontal: 12,
-//     borderRadius: 10,
-//     height: 44,
-//   },
-//   searchInput: {
-//     flex: 1,
-//     marginLeft: 10,
-//     fontSize: 16,
-//     color: '#333',
-//   },
-//   listContent: {
-//     paddingBottom: 20,
-//   },
-//   sectionHeader: {
-//     backgroundColor: '#f8f8f8',
-//     paddingVertical: 8,
-//     paddingHorizontal: 16,
-//     marginTop: 10,
-//   },
-//   sectionTitle: {
-//     fontSize: 14,
-//     fontWeight: '600',
-//     color: '#666',
-//     textTransform: 'uppercase',
-//   },
-//   drawerItem: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     paddingVertical: 12,
-//     paddingHorizontal: 16,
-//     marginHorizontal: 10,
-//     borderRadius: 8,
-//     marginVertical: 2,
-//   },
-//   itemIcon: {
-//     marginRight: 15,
-//   },
-//   itemText: {
-//     fontSize: 16,
-//     color: '#333',
-//   },
-//   emptyContainer: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     marginTop: 50,
-//   },
-//   emptyText: {
-//     fontSize: 16,
-//     color: '#999',
-//     marginTop: 10,
-//   },
-// });
-
-// export default CategoryDrawer;

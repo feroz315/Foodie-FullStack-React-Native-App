@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require('cors');
 const router = require('./routes/authRoutes.js');
 
-
 const app = express();
 
 
@@ -12,7 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/api", router);
-
 
 
 app.listen(3000, () => {

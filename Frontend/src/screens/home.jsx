@@ -506,3 +506,210 @@ export default Home;
 // });
 
 // export default HomeScreen;
+
+
+// // components/CategoryDrawer.js (Alternative version with categories)
+// import React, { useState } from 'react';
+// import {
+//   View,
+//   Text,
+//   StyleSheet,
+//   TouchableOpacity,
+//   TextInput,
+//   FlatList,
+//   SectionList,
+//   SafeAreaView,
+// } from 'react-native';
+// import Icon from 'react-native-vector-icons/Ionicons';
+
+// // Sample data with sections
+// const SECTIONS = [
+//   {
+//     title: 'Main',
+//     data: [
+//       { id: '1', name: 'Dashboard', icon: 'home-outline' },
+//       { id: '2', name: 'Statistics', icon: 'stats-chart-outline' },
+//     ],
+//   },
+//   {
+//     title: 'Products',
+//     data: [
+//       { id: '3', name: 'All Products', icon: 'cube-outline' },
+//       { id: '4', name: 'Categories', icon: 'grid-outline' },
+//       { id: '5', name: 'Favorites', icon: 'heart-outline' },
+//     ],
+//   },
+//   {
+//     title: 'Account',
+//     data: [
+//       { id: '6', name: 'Profile', icon: 'person-outline' },
+//       { id: '7', name: 'Orders', icon: 'cart-outline' },
+//       { id: '8', name: 'Settings', icon: 'settings-outline' },
+//     ],
+//   },
+//   {
+//     title: 'Support',
+//     data: [
+//       { id: '9', name: 'Help Center', icon: 'help-circle-outline' },
+//       { id: '10', name: 'Feedback', icon: 'chatbubble-outline' },
+//     ],
+//   },
+// ];
+
+// const CategoryDrawer = ({ navigation }) => {
+//   const [searchQuery, setSearchQuery] = useState('');
+//   const [filteredData, setFilteredData] = useState(SECTIONS);
+
+//   const handleSearch = (text) => {
+//     setSearchQuery(text);
+//     if (text.trim() === '') {
+//       setFilteredData(SECTIONS);
+//     } else {
+//       const filtered = SECTIONS.map(section => ({
+//         ...section,
+//         data: section.data.filter(item =>
+//           item.name.toLowerCase().includes(text.toLowerCase())
+//         ),
+//       })).filter(section => section.data.length > 0);
+//       setFilteredData(filtered);
+//     }
+//   };
+
+//   const renderSectionHeader = ({ section: { title } }) => (
+//     <View style={styles.sectionHeader}>
+//       <Text style={styles.sectionTitle}>{title}</Text>
+//     </View>
+//   );
+
+//   const renderItem = ({ item }) => (
+//     <TouchableOpacity
+//       style={styles.drawerItem}
+//       onPress={() => {
+//         console.log(`Selected: ${item.name}`);
+//         navigation.closeDrawer();
+//       }}
+//     >
+//       <Icon name={item.icon} size={22} color="#555" style={styles.itemIcon} />
+//       <Text style={styles.itemText}>{item.name}</Text>
+//     </TouchableOpacity>
+//   );
+
+//   return (
+//     <SafeAreaView style={styles.container}>
+//       <View style={styles.header}>
+//         <Text style={styles.headerTitle}>Menu</Text>
+//       </View>
+
+//       <View style={styles.searchContainer}>
+//         <Icon name="search-outline" size={20} color="#666" />
+//         <TextInput
+//           style={styles.searchInput}
+//           placeholder="Search menu..."
+//           placeholderTextColor="#999"
+//           value={searchQuery}
+//           onChangeText={handleSearch}
+//         />
+//         {searchQuery.length > 0 && (
+//           <TouchableOpacity onPress={() => handleSearch('')}>
+//             <Icon name="close-circle" size={20} color="#666" />
+//           </TouchableOpacity>
+//         )}
+//       </View>
+
+//       {filteredData.length > 0 ? (
+//         <SectionList
+//           sections={filteredData}
+//           renderItem={renderItem}
+//           renderSectionHeader={renderSectionHeader}
+//           keyExtractor={(item) => item.id}
+//           showsVerticalScrollIndicator={false}
+//           contentContainerStyle={styles.listContent}
+//         />
+//       ) : (
+//         <View style={styles.emptyContainer}>
+//           <Icon name="search-outline" size={50} color="#ccc" />
+//           <Text style={styles.emptyText}>No results found</Text>
+//         </View>
+//       )}
+//     </SafeAreaView>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//   },
+//   header: {
+//     padding: 20,
+//     paddingTop: 10,
+//     backgroundColor: '#6C63FF',
+//     borderBottomLeftRadius: 20,
+//     borderBottomRightRadius: 20,
+//   },
+//   headerTitle: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     color: '#fff',
+//   },
+//   searchContainer: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     backgroundColor: '#f0f0f0',
+//     marginHorizontal: 16,
+//     marginTop: 16,
+//     paddingHorizontal: 12,
+//     borderRadius: 10,
+//     height: 44,
+//   },
+//   searchInput: {
+//     flex: 1,
+//     marginLeft: 10,
+//     fontSize: 16,
+//     color: '#333',
+//   },
+//   listContent: {
+//     paddingBottom: 20,
+//   },
+//   sectionHeader: {
+//     backgroundColor: '#f8f8f8',
+//     paddingVertical: 8,
+//     paddingHorizontal: 16,
+//     marginTop: 10,
+//   },
+//   sectionTitle: {
+//     fontSize: 14,
+//     fontWeight: '600',
+//     color: '#666',
+//     textTransform: 'uppercase',
+//   },
+//   drawerItem: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     paddingVertical: 12,
+//     paddingHorizontal: 16,
+//     marginHorizontal: 10,
+//     borderRadius: 8,
+//     marginVertical: 2,
+//   },
+//   itemIcon: {
+//     marginRight: 15,
+//   },
+//   itemText: {
+//     fontSize: 16,
+//     color: '#333',
+//   },
+//   emptyContainer: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     marginTop: 50,
+//   },
+//   emptyText: {
+//     fontSize: 16,
+//     color: '#999',
+//     marginTop: 10,
+//   },
+// });
+
+// export default CategoryDrawer;
